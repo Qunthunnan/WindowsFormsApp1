@@ -29,50 +29,47 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            this.helpButton = new System.Windows.Forms.Button();
-            this.resultLabel = new System.Windows.Forms.Label();
+            this.CoordsLabel = new System.Windows.Forms.Label();
+            this.rectangle = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // helpButton
+            // CoordsLabel
             // 
-            this.helpButton.BackColor = System.Drawing.SystemColors.Info;
-            this.helpButton.Location = new System.Drawing.Point(13, 13);
-            this.helpButton.Name = "helpButton";
-            this.helpButton.Size = new System.Drawing.Size(75, 23);
-            this.helpButton.TabIndex = 0;
-            this.helpButton.Text = "Click Me!";
-            this.helpButton.UseVisualStyleBackColor = false;
-            this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
+            this.CoordsLabel.AutoSize = true;
+            this.CoordsLabel.Location = new System.Drawing.Point(13, 13);
+            this.CoordsLabel.Name = "CoordsLabel";
+            this.CoordsLabel.Size = new System.Drawing.Size(0, 13);
+            this.CoordsLabel.TabIndex = 0;
             // 
-            // resultLabel
+            // rectangle
             // 
-            this.resultLabel.AutoSize = true;
-            this.resultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.resultLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.resultLabel.Location = new System.Drawing.Point(94, 13);
-            this.resultLabel.Name = "resultLabel";
-            this.resultLabel.Size = new System.Drawing.Size(67, 24);
-            this.resultLabel.TabIndex = 1;
-            this.resultLabel.Text = "Result:";
+            this.rectangle.Location = new System.Drawing.Point(12, 12);
+            this.rectangle.Name = "rectangle";
+            this.rectangle.Size = new System.Drawing.Size(388, 341);
+            this.rectangle.TabIndex = 1;
+            this.rectangle.MouseClick += new System.Windows.Forms.MouseEventHandler(this.rectangle_MouseClick);
+            this.rectangle.MouseMove += new System.Windows.Forms.MouseEventHandler(this.rectangle_MouseMove);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.resultLabel);
-            this.Controls.Add(this.helpButton);
+            this.ClientSize = new System.Drawing.Size(412, 365);
+            this.Controls.Add(this.rectangle);
+            this.Controls.Add(this.CoordsLabel);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseClick);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
+        private System.Windows.Forms.Label CoordsLabel;
+        private System.Windows.Forms.Panel rectangle;
+
         #endregion
 
-        private System.Windows.Forms.Button helpButton;
-        private System.Windows.Forms.Label resultLabel;
+        //private System.Windows.Forms.Button helpButton;
+        //private System.Windows.Forms.Label resultLabel;
     }
 }
 
